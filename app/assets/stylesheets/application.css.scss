@@ -43,6 +43,17 @@
  background: linear-gradient(to right, #BDFFF3, #4AC29A);  /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.navbar-default .navbar-toggle {
+ border: 2px solid white;
+ &:hover, &:focus {
+  background-color:#BDFFF3; 
+ }
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+ background-color: white;
+}
+
 // homepage styles
 .home-callout {
  margin-top: -20px;
