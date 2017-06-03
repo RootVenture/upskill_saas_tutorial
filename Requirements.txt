@@ -14,3 +14,11 @@ user fields.  Rails app will note plan id (1 vs. 2)
 * Send the user information (email, plan ID)  and Card token to Stripe servers and Stripe will create
  subscription membership.  Stripe will send us a customer token here. First charge should happen too.
  Rails should save customer token and user information to our database.
+ 
+ User Profiles
+ * Each user should have one profile 
+    * Create relationship between model files for profile and users
+ * Users should see a link to new profile form upon signing up
+ * User should be able to create and view their user profile
+ * User profile should have a profile picture
+ * User should be able to view all user profiles
