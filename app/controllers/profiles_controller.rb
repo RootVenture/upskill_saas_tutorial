@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
     #if save successful, display success flash and redirect to homepage
     if @profile.save
       flash[:success] = "Profile Updated!"
-      redirect_to root_path
+      redirect_to user_path( params[:user_id] )
     else 
       #if save failed, go display the form again
       render action: :new
