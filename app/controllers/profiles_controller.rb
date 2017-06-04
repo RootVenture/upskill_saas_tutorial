@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
     # render blank profile details form
     @profile = Profile.new
   end
+
   # POST to /users/:user_id/profile
   def create
     #get user from the params
@@ -18,6 +19,12 @@ class ProfilesController < ApplicationController
       #if save failed, go display the form again
       render action: :new
     end
+  end
+  
+  # GET to /users/:user_id/profile/edit
+  def edit 
+    @user = User.find( params[:user_id] )
+    @profile = @user.profile
   end
   
   #whitelisting form fields to be submitted.  New fields cant be added for submission.
