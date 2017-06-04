@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
     #if save successful, display success flash and redirect to homepage
     if @profile.save
       flash[:success] = "Profile Updated!"
-      redirect_to user_path( params[:user_id] )
+      redirect_to user_path(id: params[:user_id] )
     else 
       #if save failed, go display the form again
       render action: :new
@@ -25,6 +25,22 @@ class ProfilesController < ApplicationController
   def edit 
     @user = User.find( params[:user_id] )
     @profile = @user.profile
+  end
+  
+  #PUT or PATCH to /users/:user_id/profile
+  def update
+    #retrieve user from the db
+    @user = User.find( params[:user_id] )
+    #retrieve that users profile
+    @profile = @user.profile
+    # mass assign updated attributes to profile and save
+    if @profile.update_attributes( profile_params )
+      flash[:success] = "Profile Updated!"
+      #Redirect user to their profile page
+      redirect_to user_path(id: params[:user_id] )
+    else 
+      render action :edit
+    end
   end
   
   #whitelisting form fields to be submitted.  New fields cant be added for submission.
