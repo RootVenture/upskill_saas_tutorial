@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   # GET to /users/:id
   def show
     #item within params needs to match our URL
