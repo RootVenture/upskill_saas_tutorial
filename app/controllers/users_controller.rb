@@ -6,4 +6,8 @@ class UsersController < ApplicationController
     #item within params needs to match our URL
     @user = User.find( params[:id] )
   end
+  
+  def index
+    
+  end
 end
